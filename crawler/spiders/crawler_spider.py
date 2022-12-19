@@ -41,7 +41,7 @@ class CrawlerSpider(Spider):
                 "za", "zb", "zd", "ze", "zg", "zh", "zi", "zj", "zl", "zm", "zn", "zo", "zp", "zr", "zs", "zu", "zv", "zw", "zy"
         ]
 
-        for i in dataSZ:
+        for i in dataJR:
             url = f"https://fbref.com/en/players/{i}/" #https://fbref.com/en/players/aa
             yield Request(url=url, callback=self.parse)
             sleep(3)
