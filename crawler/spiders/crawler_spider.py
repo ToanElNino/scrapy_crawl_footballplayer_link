@@ -47,7 +47,6 @@ class CrawlerSpider(Spider):
         questions = Selector(response).xpath('//div[@class="section_content"]//p')
         for x in range(len(questions)-1):
             path = f'//div[@class="section_content"]//p[{x+1}]//a//@href'
-            # item = CrawlerItem()
-            # item['Link'] = Selector(response).xpath(path).extract_first()
-            # yield item
-            yield Selector(response).xpath(path).extract_first()
+            item = CrawlerItem()
+            item['Link'] = Selector(response).xpath(path).extract_first()
+            yield item
