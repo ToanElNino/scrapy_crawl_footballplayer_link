@@ -44,7 +44,7 @@ class CrawlerSpider(Spider):
         for i in dataSZ:
             url = f"https://fbref.com/en/players/{i}/" #https://fbref.com/en/players/aa
             yield Request(url=url, callback=self.parse)
-            sleep(1)
+            sleep(3)
 
     def parse(self, response):
         questions = Selector(response).xpath('//div[@class="section_content"]//p')
