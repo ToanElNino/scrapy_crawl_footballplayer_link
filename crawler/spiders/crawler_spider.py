@@ -19,7 +19,7 @@ class CrawlerSpider(Spider):
         for i in data:
             url = "https://fbref.com/en/players/{}/".format(i)
             yield scrapy.Request(url=url, callback=self.parse)
-            sleep(10)
+            sleep(1)
 
     def parse(self, response):
         questions = Selector(response).xpath('//div[@class="section_content"]//p')
